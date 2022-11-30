@@ -5,7 +5,7 @@ onready var speed = 200
 func _ready():
 	pass
 
-func _process(delta):
+func _physics_process(delta):
 	var input_direction = Vector2.ZERO
 	if Input.is_action_pressed("right"):
 		input_direction.x += 1
