@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
 onready var speed = 200
+onready var Bullet = load("res://projectiles/PlayerBullet.tscn")
+var Bullet_Container = null
+
 
 func _ready():
 	pass
@@ -21,6 +24,14 @@ func _physics_process(delta):
 	var direction = (mouse - self.position).normalized()
 	var new_angle =  PI + atan2(direction.y, direction.x) 
 	self.rotation  = new_angle
+	if Input.is_action_just_pressed("shoot"):
+		var Bullet_Container = get_node_or_null("/root/Game/Bullet_Container")
+		print("shoot")
+		var bullet = Bullet.instance()
+		bullet.global_position = self.position
+		Bullet_Container.add_child(bullet)
+		
+		
 
 
 
