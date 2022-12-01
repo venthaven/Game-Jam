@@ -5,7 +5,7 @@ var hunger = 100
 var score = 0
 
 func _ready():
-	pass
+	randomize()
 
 func hunger_change(amount):
 	hunger += amount
@@ -19,4 +19,4 @@ func score_increase(amount):
 
 func _physics_process(_delta):
 	if hunger <= 0:
-		var _target = get_tree().change_scene("res://UI/EndGame.tscn")
+		var _scene = get_tree().change_scene("res://UI/EndGame.tscn")
