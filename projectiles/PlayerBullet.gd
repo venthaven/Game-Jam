@@ -12,14 +12,20 @@ func _ready():
 	velocity = Vector2(0,-speed).rotated(new_angle)
 
 func _physics_process(_delta):
-	velocity = move_and_slide(velocity, Vector2.ZERO)
+	velocity = move_and_slide(velocity)
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		print("I collided with ", collision.collider.name)
+		if collision.collider.has_method("hit"):
+			collision.collider.hit()
+		queue_free()
 
 
 
 
 
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(_area):
 	pass
 
 

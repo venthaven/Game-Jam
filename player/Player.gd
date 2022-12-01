@@ -37,8 +37,10 @@ func _physics_process(_delta):
 
 
 func _on_Timer_timeout():
-	Global.hunger -= 1
-	print(Global.hunger)
-	Global.score += 1
-	print(Global.score)
+	Global.hunger_change(-1)
+	Global.score_increase(1)
+#	Global.hunger -= 1
+#	print(Global.hunger)
+#	Global.score += 1
+#	print(Global.score)
 	
