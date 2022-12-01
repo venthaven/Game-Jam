@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 onready var Corpse = load("res://enemy/Corpse.tscn")
-var Enemy_Container = null
 
 var dead = false
 
@@ -10,9 +9,16 @@ func _ready():
 
 func hit():
 	print("hit")
-	Enemy_Container = get_node_or_null("/root/Game/Bullet_Container")
-	if Enemy_Container != null:
-		var corpse = Corpse.instance()
-		corpse.global_position = self.position
-		Enemy_Container.add_child(corpse)
-	queue_free()
+	$AnimatedSprite.set_animation("dead")
+	dead = true
+	$CollisionShape2D.queue_free()
+
+
+
+
+
+func _on_Area2D_body_entered(body):
+	if body.has_method("eat"):
+		if dead == true:
+			body.eat()
+			queue_free()
