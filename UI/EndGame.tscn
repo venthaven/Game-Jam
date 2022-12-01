@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/Main Menu/menu.tres" type="Theme" id=1]
+
+[node name="EndGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.752941 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -199.5
+margin_top = 50.0
+margin_right = 199.5
+margin_bottom = 136.0
+text = "Game over"
+align = 1
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -208.0
+margin_top = -51.0
+margin_right = -8.0
+margin_bottom = -10.0
+text = "Play again?"
+
+[node name="Button2" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -51.0
+margin_right = 208.0
+margin_bottom = -10.0
+text = "Quit"
+icon_align = 1
