@@ -9,6 +9,5 @@ func _physics_process(_delta):
 	
 
 
-func _on_FoodBar_value_changed(value):
-#	$FoodBar.theme_overrides.fg.bg_color = Vector3(100,0,0)
-	pass
+func _on_FoodBar_value_changed(_value):
+	$FoodBar.get("custom_styles/fg").set_bg_color(Color8(55 + 2 * Global.hunger, 0, 0))

@@ -44,7 +44,7 @@ func _physics_process(_delta):
 						velocity = movedirection*speed
 				else:
 					velocity = Vector2(0, 0)
-				move_and_slide(velocity, Vector2(0,0))
+				var _v = move_and_slide(velocity, Vector2(0,0))
 			update()
 
 func hit():
