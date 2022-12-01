@@ -20,7 +20,7 @@ func _physics_process(_delta):
 		input_direction.y -= 1
 	input_direction = input_direction.normalized()
 	var _v = move_and_slide(input_direction * speed)
-	var mouse = get_viewport().get_mouse_position()
+	var mouse = get_global_mouse_position()
 	var direction = (mouse - self.position).normalized()
 	var new_angle =  PI + atan2(direction.y, direction.x) 
 	self.rotation  = new_angle
@@ -37,8 +37,10 @@ func _physics_process(_delta):
 
 
 func _on_Timer_timeout():
-	Global.hunger -= 1
-	print(Global.hunger)
-	Global.score += 1
-	print(Global.score)
+	Global.hunger_change(-1)
+	Global.score_increase(1)
+#	Global.hunger -= 1
+#	print(Global.hunger)
+#	Global.score += 1
+#	print(Global.score)
 	
