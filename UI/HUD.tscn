@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/MetalVengeance-0WqV9.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=2]
+[ext_resource path="res://UI/Main Menu/menu.tres" type="Theme" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -40,5 +41,7 @@ margin_left = -200.0
 margin_top = -40.0
 margin_right = 200.0
 margin_bottom = -10.0
+theme = ExtResource( 3 )
+value = 100.0
 
 [connection signal="value_changed" from="FoodBar" to="." method="_on_FoodBar_value_changed"]
