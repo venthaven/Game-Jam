@@ -17,8 +17,10 @@ Walk over the body to eat it
 Issues with uploading to GitHub and slight coding issues within the scenes and shaders
 
 ## Implementation
-Death, Bullet Path finding, Player shooting, Shaders, Player movements, UI
-Godot
+Godot, Reason11, Piskal
+
+
+## References
 Fonts: 
 https://www.fontspace.com/metal-vengeance-font-f71995 
 Shaders:
@@ -28,9 +30,6 @@ https://godotshaders.com/shader/color-vignetting/
 Tilemaps and Assets:
 https://opengameart.org/content/2d-modified-dark-forest-tileset
 https://www.kenney.nl/assets/topdown-shooter
-
-## References
-Hotline Miami
 
 ## Future Development
 Add other enemies with different behaviors, as well as create other characters, and change the corpse.
