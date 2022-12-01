@@ -31,6 +31,7 @@ position = Vector2( 403, 314 )
 [node name="Enemy" parent="Enemy_Container" instance=ExtResource( 5 )]
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 position = Vector2( 1, 1 )

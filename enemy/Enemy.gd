@@ -5,10 +5,11 @@ onready var Corpse = load("res://enemy/Corpse.tscn")
 onready var Bullet = load("res://projectiles/EnemyBullet.tscn")
 var Bullet_Container = null
 
-
 var dead = false
 
-
+var points = []
+const margin = 1.5
+export var looking_speed = 100
 
 
 func _ready():
@@ -22,6 +23,18 @@ func _physics_process(_delta):
 			var direction = (playerloc - self.position).normalized()
 			var new_angle =  PI + atan2(direction.y, direction.x) 
 			self.rotation  = new_angle
+			
+			var velocity = Vector2.ZERO
+			points = get_node("/root/Game/Navigation2D").get_simple_path(get_global_position(), player.global_position, true)
+			if points.size() > 1:
+				var distance = points[1] - get_global_position()
+				var movedirection = distance.normalized()
+				if movedirection.length() > margin or points.size() > 2:
+						velocity = direction*looking_speed
+				else:
+					velocity = Vector2(0, 0)
+				move_and_slide(velocity, Vector2(0,0))
+			update()
 
 func hit():
 	print("hit")
