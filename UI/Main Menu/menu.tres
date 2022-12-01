@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=2]
+[gd_resource type="Theme" load_steps=12 format=2]
 
 [ext_resource path="res://assets/MetalVengeanceItalic-owAdd.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/MetalVengeance-0WqV9.ttf" type="DynamicFontData" id=2]
@@ -73,8 +73,19 @@ outline_size = 2
 outline_color = Color( 0.454902, 0.368627, 0.368627, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.478431, 0.0588235, 0.0588235, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.756863, 0.282353, 0.282353, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [resource]
 Button/colors/font_color = Color( 0.454902, 0.368627, 0.368627, 1 )
@@ -90,4 +101,5 @@ Button/styles/normal = SubResource( 5 )
 Button/styles/pressed = SubResource( 6 )
 Label/colors/font_color = Color( 0, 0, 0, 1 )
 Label/fonts/font = SubResource( 7 )
+ProgressBar/styles/bg = SubResource( 9 )
 ProgressBar/styles/fg = SubResource( 8 )
