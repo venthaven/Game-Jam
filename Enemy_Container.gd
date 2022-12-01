@@ -11,6 +11,7 @@ var spawn_locations = [
 ]
 
 var spawn_time = 5.0
+var last_spawn = 2
 
 func _on_Spawn_Timer_timeout():
 	# Picking a random spawn location
@@ -18,8 +19,13 @@ func _on_Spawn_Timer_timeout():
 	var location = Vector2.ZERO
 	while not has_spawned:
 		var random = randi() % 5
-		location = spawn_locations[random]
-		has_spawned = true
+		if random != last_spawn:
+#			print(random)
+			location = spawn_locations[random]
+			has_spawned = true
+			last_spawn = random
+#		else:
+#			print("repicking location")
 	
 	# Spawning in the enemy
 	var enemy = Enemy.instance()
