@@ -19,4 +19,4 @@ func score_increase(amount):
 
 func _physics_process(_delta):
 	if hunger <= 0:
-		var _target = get_tree().change_scene("res://menus/Death Screen.tscn")
+		var _target = get_tree().change_scene("res://UI/EndGame.tscn")
