@@ -10,4 +10,5 @@ func _physics_process(_delta):
 
 
 func _on_FoodBar_value_changed(value):
-	pass # Replace with function body.
+#	$FoodBar.theme_overrides.fg.bg_color = Vector3(100,0,0)
+	pass
