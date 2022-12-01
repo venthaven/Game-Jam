@@ -11,11 +11,11 @@ func hunger_change(amount):
 	hunger += amount
 	if hunger > 100:
 		hunger = 100
-	print(hunger)
+#	print(hunger)
 
 func score_increase(amount):
 	score += amount
-	print(score)
+#	print(score)
 
 func _physics_process(_delta):
 	if hunger <= 0:

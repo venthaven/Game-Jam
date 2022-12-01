@@ -19,7 +19,8 @@ const margin = 1.5
 
 func _ready():
 	if player != null:
-		print("hi!")
+		#print("hi!")
+		pass
 
 func _physics_process(_delta):
 	if dead != true:
@@ -31,7 +32,7 @@ func _physics_process(_delta):
 			var velocity = Vector2.ZERO
 			ray.cast_to = ray.to_local(player.global_position)
 			var c = ray.get_collider()
-			print(c)
+#			print(c)
 			line_of_sight = false
 			if c and c.name == "Player":
 				line_of_sight = true
@@ -47,7 +48,7 @@ func _physics_process(_delta):
 			update()
 
 func hit():
-	print("hit")
+#	print("hit")
 	$AnimatedSprite.set_animation("dead")
 	dead = true
 	$CollisionShape2D.queue_free()

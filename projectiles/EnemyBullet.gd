@@ -10,7 +10,7 @@ var damage = 10
 func _ready():
 	if player != null:
 		var target = player.global_position
-		print(target)
+#		print(target)
 		var direction = (target - self.position).normalized()
 		var new_angle =  PI/2 + atan2(direction.y, direction.x) 
 		velocity = Vector2(0,-speed).rotated(new_angle)
