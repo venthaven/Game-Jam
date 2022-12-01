@@ -59,8 +59,8 @@ func _on_Timer_timeout():
 		if Bullet_Container != null:
 			var bullet = Bullet.instance()
 			bullet.global_position = self.position
-			print(self.position)
-			print(bullet.global_position)
+#			print(self.position)
+#			print(bullet.global_position)
 			Bullet_Container.add_child(bullet)
 
 
