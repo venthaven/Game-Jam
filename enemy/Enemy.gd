@@ -28,25 +28,23 @@ func _physics_process(_delta):
 			var direction = (playerloc - self.position).normalized()
 			var new_angle =  PI + atan2(direction.y, direction.x) 
 			self.rotation  = new_angle
-			
 			var velocity = Vector2.ZERO
-			player = get_node_or_null("/root/Game/Player_Container/Player")
-			if player != null:
-				ray.cast_to = ray.to_local(player.global_position)
-				var c = ray.get_collider()
-				line_of_sight = false
-				if c and c.name == "Player":
-					line_of_sight = true
-				points = get_node("/root/Game/Navigation2D").get_simple_path(get_global_position(), player.global_position, true)
-				if points.size() > 1:
-					var distance = points[1] - get_global_position()
-					var movedirection = distance.normalized()
-					if distance.length() > margin or points.size() > 2:
-							velocity = movedirection*speed
-					else:
-						velocity = Vector2(0, 0)
-					move_and_slide(velocity, Vector2(0,0))
-				update()
+			ray.cast_to = ray.to_local(player.global_position)
+			var c = ray.get_collider()
+			print(c)
+			line_of_sight = false
+			if c and c.name == "Player":
+				line_of_sight = true
+			points = get_node("/root/Game/Navigation2D").get_simple_path(get_global_position(), player.global_position, true)
+			if points.size() > 1:
+				var distance = points[1] - get_global_position()
+				var movedirection = distance.normalized()
+				if distance.length() > margin or points.size() > 2:
+						velocity = movedirection*speed
+				else:
+					velocity = Vector2(0, 0)
+				move_and_slide(velocity, Vector2(0,0))
+			update()
 
 func hit():
 	print("hit")
@@ -56,7 +54,7 @@ func hit():
 
 
 func _on_Timer_timeout():
-	if dead != true: #and line_of_sight == true
+	if dead != true and line_of_sight == true:
 		Bullet_Container = get_node_or_null("/root/Game/Bullet_Container")
 		if Bullet_Container != null:
 			var bullet = Bullet.instance()
