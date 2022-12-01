@@ -1,6 +1,5 @@
 extends Node
 
-
 var hunger = 100
 
 var score = 0
@@ -12,7 +11,6 @@ func hunger_change(amount):
 	hunger += amount
 	if hunger > 100:
 		hunger = 100
-		clamp(hunger,0,100)
 	print(hunger)
 
 func score_increase(amount):

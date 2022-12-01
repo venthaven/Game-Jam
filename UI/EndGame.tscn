@@ -1,11 +1,26 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Main Menu/menu.tres" type="Theme" id=1]
+[ext_resource path="res://UI/EndGame.gd" type="Script" id=2]
+[ext_resource path="res://assets/MetalVengeance-0WqV9.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 1
+outline_color = Color( 0.478431, 0.0588235, 0.0588235, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 1
+outline_color = Color( 0.478431, 0.0588235, 0.0588235, 1 )
+font_data = ExtResource( 3 )
 
 [node name="EndGame" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -22,25 +37,57 @@ margin_bottom = 136.0
 text = "Game over"
 align = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Best" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_right = 512.0
+margin_bottom = 86.0
+custom_colors/font_color = Color( 0.454902, 0.368627, 0.368627, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "SSSSS"
+align = 1
+valign = 1
+
+[node name="FinalScore" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -43.0
+margin_right = 512.0
+margin_bottom = 43.0
+custom_colors/font_color = Color( 0.454902, 0.368627, 0.368627, 1 )
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+
+[node name="PlayAgain" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -208.0
-margin_top = -51.0
+margin_top = -81.0
 margin_right = -8.0
-margin_bottom = -10.0
+margin_bottom = -40.0
 text = "Play again?"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Quit" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = -51.0
+margin_top = -81.0
 margin_right = 208.0
-margin_bottom = -10.0
+margin_bottom = -40.0
 text = "Quit"
 icon_align = 1
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_PlayAgain_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
