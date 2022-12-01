@@ -26,15 +26,17 @@ func _physics_process(_delta):
 	self.rotation  = new_angle
 	if Input.is_action_just_pressed("shoot"):
 		Bullet_Container = get_node_or_null("/root/Game/Bullet_Container")
-		print("shoot")
-		var bullet = Bullet.instance()
-		bullet.global_position = self.position
-		Bullet_Container.add_child(bullet)
+		if Bullet_Container != null:
+			print("shoot")
+			var bullet = Bullet.instance()
+			bullet.global_position = self.position
+			Bullet_Container.add_child(bullet)
 
 func eat():
 	Global.hunger_change(5)
 
-
+func ouch(damage):
+	Global.hunger_change(damage)
 
 
 
