@@ -40,3 +40,5 @@ margin_left = -200.0
 margin_top = -40.0
 margin_right = 200.0
 margin_bottom = -10.0
+
+[connection signal="value_changed" from="FoodBar" to="." method="_on_FoodBar_value_changed"]
