@@ -1,6 +1,5 @@
 extends Node
 
-
 var hunger = 100
 
 var score = 0
