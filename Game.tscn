@@ -13,6 +13,7 @@
 [node name="Bullet_Container" type="Node2D" parent="."]
 
 [node name="PlayerBullet" parent="Bullet_Container" instance=ExtResource( 2 )]
+position = Vector2( 1000, 0 )
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 4 )
