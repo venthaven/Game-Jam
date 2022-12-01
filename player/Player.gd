@@ -27,7 +27,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		Bullet_Container = get_node_or_null("/root/Game/Bullet_Container")
 		if Bullet_Container != null:
-			print("shoot")
+#			print("shoot")
 			var bullet = Bullet.instance()
 			bullet.global_position = self.position
 			Bullet_Container.add_child(bullet)

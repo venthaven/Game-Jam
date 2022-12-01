@@ -15,7 +15,7 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity)
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		print("I collided with ", collision.collider.name)
+#		print("I collided with ", collision.collider.name)
 		if collision.collider.has_method("hit"):
 			collision.collider.hit()
 		queue_free()
